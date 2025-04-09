@@ -15,10 +15,7 @@ RUN CGO_ENABLED=0 go build \
 	&& upx-ucl --best --ultra-brute ./dist/vault
 
 # final stage
-FROM debian:bullseye-slim
-RUN apt-get update && \
-	apt-get install -y --no-install-recommends curl ca-certificates && \
-	rm -rf /var/lib/apt/lists/*
+FROM scratch
 
 ARG APPLICATION="vault"
 ARG DESCRIPTION="Vault is a CLI tool for securely decrypting encrypted data using RSA private key."
