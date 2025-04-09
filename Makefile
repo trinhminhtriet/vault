@@ -1,7 +1,7 @@
 NAME    := vault
 PACKAGE := github.com/trinhminhtriet/$(NAME)
 DATE    :=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
-GIT     := $(shell [ -d .git ] && git rev-parse --short HEAD)
+COMMIT     := $(shell [ -d .git ] && git rev-parse --short HEAD)
 VERSION := $(shell git describe --tags)
 
 default: build
@@ -11,7 +11,7 @@ tidy:
 
 build:
 	CGO_ENABLED=0 go build \
-	-ldflags "-s -w -X '${PACKAGE}/internal.VERSION=${VERSION}' -X '${PACKAGE}/internal.DATE=${DATE}'" \
+	-ldflags "-s -w -X '${PACKAGE}/internal.VERSION=${VERSION}' -X '${PACKAGE}/internal.DATE=${DATE}' -X '${PACKAGE}/internal.COMMIT=${COMMIT}'" \
 	-a -tags netgo -o dist/${NAME} main.go
 
 release:
