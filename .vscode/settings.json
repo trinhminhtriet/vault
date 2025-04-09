@@ -1,3 +1,15 @@
 {
-	"editor.formatOnSave": true
+	"editor.formatOnSave": true,
+	"[go]": {
+		"editor.formatOnSave": true,
+		"editor.codeActionsOnSave": {
+			"source.organizeImports": true
+		}
+	},
+	"go.useLanguageServer": true,
+	"go.toolsManagement.autoUpdate": true,
+	"go.lintOnSave": "package",
+	"go.vetOnSave": "package",
+	"go.testOnSave": false,
+	"go.formatTool": "gofmt"
 }
