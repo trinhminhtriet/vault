@@ -16,7 +16,7 @@ Vault is a CLI tool for securely decrypting encrypted data using RSA private key
 To clone the repository, use the following command:
 
 ```sh
-git clone https://github.com/your-username/vault.git
+git clone git@github.com:trinhminhtriet/vault.git
 cd vault
 ```
 
